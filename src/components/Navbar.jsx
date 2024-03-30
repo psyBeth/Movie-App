@@ -10,7 +10,7 @@ export default function Example() {
   const currentUser = { displayName: "Betul Koru"};
 
   return (
-    <Disclosure as="nav" className="bg-neutral-100 text-black dark:bg-gray-900 py-3 dark: text-white fixed w-full z-20 top-0">
+    <Disclosure as="nav" className="bg-neutral-100 dark:bg-gray-900 py-3 dark:text-white fixed w-full z-20 top-0">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link className='pr-2 text-2xl font-semibold' to="/" >  
