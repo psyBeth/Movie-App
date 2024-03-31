@@ -5,6 +5,7 @@ import { useState } from "react";
 const Register = () => {
 
     //! when working with inputs, the first value of a state should never be null or undefined
+    // nested state
     const [info, setInfo] = useState({ 
         firstName:"", 
         lastName:"", 
@@ -12,7 +13,8 @@ const Register = () => {
         password:"" 
     });
 
-    const handleChange = (e) => setInfo({...info, [e.target.name] : e.target.value})
+    const handleChange = (e) => setInfo({...info, [e.target.name] : e.target.value});
+    console.log(info);
 
     return (
         <div className="flex justify-center">
