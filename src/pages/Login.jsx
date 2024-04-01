@@ -22,9 +22,10 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center">
+    <>
+    <div className="flex justify-center dark:bg-gray-dark-main">
       <div className="overflow-hidden flex-1 justify-center items-center ">
-        <div className={`form-container mt-[5vh] w-[380px] h-[500px] `}>
+        <div className={`form-container mt-[15vh] w-[380px] h-[500px] `}>
           <form onSubmit={handleSubmit}>
             <h2 className="text-red-main text-2xl font-[500] text-center tracking-[0.1em] mb-3">
               Sign In
@@ -80,6 +81,9 @@ const Login = () => {
         </div>
       </div>
     </div>
+    <div className="dark:bg-gray-dark-main h-96">
+    </div>
+    </>
   );
 };
 

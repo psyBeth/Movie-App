@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { auth } from "../auth/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
@@ -24,7 +24,18 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const values = {createUser};
+  //* enable login with email/password
+  const signIn = async (email, password) => {
+    try {
+      // firebase method to existing user to login
+      await signInWithEmailAndPassword(auth, email, password)
+      navigate("/")
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  const values = {createUser, signIn};
 
   return (
     <AuthContext.Provider value={values}>
