@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect } from "react";
 import { auth } from "../auth/firebase";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, 
+        signInWithEmailAndPassword,
+        updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastNotify";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -25,10 +27,16 @@ const AuthContextProvider = ({ children }) => {
     userObserver();
   }, []);
 
-  const createUser = async (email, password) => {
+  const createUser = async (email, password, displayName) => {
     try {
       // firebase method to sign up a new user
-      await createUserWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(auth, email, password);
+
+      // firebase method to update user profile
+      await updateProfile(auth.currentUser, {
+        displayName: displayName
+      });
+
       navigate("/")
       toastSuccessNotify("Registered successfully!");
     } catch (error) {
