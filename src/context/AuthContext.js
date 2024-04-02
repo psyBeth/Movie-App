@@ -36,8 +36,13 @@ const AuthContextProvider = ({ children }) => {
       // firebase method to existing user to login
       await signInWithEmailAndPassword(auth, email, password)
       navigate("/")
+
+      toastSuccessNotify("Logged in successfully!");
+
     } catch (error) {
       console.log(error)
+
+      toastErrorNotify(error.message);
     }
   };
 
