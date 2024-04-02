@@ -3,7 +3,7 @@ import { auth } from "../auth/firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastNotify";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useState } from "react";
 
 
@@ -57,15 +57,21 @@ const AuthContextProvider = ({ children }) => {
     //* firebase method that detecting if user signed in, when user changes it gives the new user as a response
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user);
+        const { email, displayName, photoURL } = user;
+        setCurrentUser({ email, displayName, photoURL });
       } else {
         // user signed out
-        console.log("logged out");
+        setCurrentUser(false);
       }
     });
   };
 
-  const values = { createUser, signIn };
+  const logOut = () => {
+    signOut(auth)
+    toastSuccessNotify("Logged out successfully!")
+  };
+
+  const values = { createUser, signIn, logOut, currentUser };
 
   return (
     <AuthContext.Provider value={values}>
