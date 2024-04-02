@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-gray-dark-main">
       <AuthContextProvider >
         <AppRouter />
         <ToastContainer />

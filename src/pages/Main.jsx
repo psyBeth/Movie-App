@@ -2,7 +2,9 @@ import React from 'react'
 
 const Main = () => {
   return (
-    <div>Main</div>
+    <div className='dark:bg-gray-dark-main'>
+      MAIN
+    </div>
   )
 }
 
