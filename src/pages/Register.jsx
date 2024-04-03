@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 
 const Register = () => {
-    const { createUser } = useAuthContext();
+    const { createUser, signUpProvider } = useAuthContext();
 
     //! when working with inputs, the first value of a state should never be null or undefined
     // nested state
@@ -82,6 +82,7 @@ const Register = () => {
                         <button
                             className="flex justify-between text-center items-center btn-danger"
                             type="button"
+                            onClick={signUpProvider}
                         >
                             Continue with Google
                             <GoogleIcon color="currentColor" />
