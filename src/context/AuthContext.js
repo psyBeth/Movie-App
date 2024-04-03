@@ -1,8 +1,12 @@
 import { createContext, useContext, useEffect } from "react";
 import { auth } from "../auth/firebase";
-import { createUserWithEmailAndPassword, 
-        signInWithEmailAndPassword,
-        updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastNotify";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -79,7 +83,26 @@ const AuthContextProvider = ({ children }) => {
     toastSuccessNotify("Logged out successfully!")
   };
 
-  const values = { createUser, signIn, logOut, currentUser };
+  //* https://console.firebase.google.com/
+  //* => Authentication => sign-in-method => enable Google
+  //* => Authentication => settings => Authorized domains => add domain
+  //! ADD DOMAIN
+  const signUpProvider = () => {
+    // firebase method to log in with Google 
+    const provider = new GoogleAuthProvider();
+
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+        navigate("/");
+        toastSuccessNotify("Logged in successfully");
+      }).catch((error) => {
+        // Handle Errors here.
+        console.log(error);
+      });
+  };
+
+  const values = { createUser, signIn, logOut, currentUser, signUpProvider };
 
   return (
     <AuthContext.Provider value={values}>
