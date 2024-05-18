@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# MOVIE APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This application is a movie streaming service that allows users to register, log in, and explore details of films. Additionally, users can log in with their Google accounts. Registered users can watch movies, view their details, and search for films. Firebase, Axios, react-toastNotify, and API requests were utilized in the project.
 
+## Screen recording;
+![Project snapshot](./movie-app.gif) 
+
+[Movie App Live Page](https://react-movie-app1041.netlify.app)
+
+## Tech/framework used
+- **React**: A JavaScript library for building user interfaces. [Learn more](https://reactjs.org/)
+
+- **Firebase**: A cloud-based platform for building and scaling web applications. [Learn more](https://firebase.google.com/)
+
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs. [Learn more](https://tailwindcss.com/)
+
+- **Context API**: A React feature for managing state at the component level. [Learn more](https://reactjs.org/docs/context.html)
+
+- **axios**: A promise-based HTTP client for the browser and Node.js. [Learn more](https://axios-http.com/)
+
+- **React-toastify**: A library for adding toasts to your React application. [Learn more](https://fkhadra.github.io/react-toastify/)
+
+## How to use?
+
+1) New users can create a new account from the "register" page.
+2) Registered users can log in with their email and password.
+3) Logged-in users can view the details of movies.
+4) Logged-in users can find the desired film using the search bar.
+
+## Description
 In the project directory, you can run:
-
 ### `yarn start`
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## API Reference
+https://www.themoviedb.org/documentation/api
